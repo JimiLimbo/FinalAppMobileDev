@@ -12,13 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Jokester',
-      theme: ThemeData(
-      ),
-      home: LoginPage(), 
+      theme: ThemeData(),
+      home: LoginPage(),
     );
   }
 }
-
 
 class LoginPage extends StatefulWidget {
   @override
@@ -33,7 +31,17 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Jokester')),
+      appBar: AppBar(
+        title: Text(
+          'Jokester',
+          style: TextStyle(
+            fontSize: 55,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.orange,
+      ),
       body: Stack(
         children: <Widget>[
           Center(
@@ -43,9 +51,9 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text('Please sign in', 
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)
-                  ),
+                  Text('Please sign in',
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
                   SizedBox(height: 20), // Provides some spacing
                   TextField(
                     controller: _usernameController,
@@ -59,7 +67,11 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(height: 20), // More spacing
                   ElevatedButton(
                     onPressed: _login,
-                    child: Text('Log In'),
+                    child: Text('Sign In'),
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.orange,
+                    ),
                   ),
                 ],
               ),
@@ -76,6 +88,9 @@ class _LoginPageState extends State<LoginPage> {
                 );
               },
               child: Text('About'),
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.orange,
+              ),
             ),
           ),
           Positioned(
@@ -92,8 +107,8 @@ class _LoginPageState extends State<LoginPage> {
     Map<String, String>? credentials = await _storageService.getCredentials();
 
     if (credentials != null &&
-      _usernameController.text == credentials['username'] &&
-      _passwordController.text == credentials['password']) {
+        _usernameController.text == credentials['username'] &&
+        _passwordController.text == credentials['password']) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Login success')),
       );

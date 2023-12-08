@@ -6,6 +6,8 @@ class AboutPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('About'),
+        centerTitle: true,  // Center the title
+        backgroundColor: Colors.orange,
       ),
       body: Center(
         child: Padding(
@@ -22,7 +24,22 @@ class AboutPage extends StatelessWidget {
                 'Welcome to Jokester, the ultimate destination for every programmer who appreciates a good laugh! In the world of coding, where complexities and challenges are a daily encounter, a dash of humor is not just refreshing but necessary. That is precisely what Jokester brings to your fingertips, an endless stream of jokes tailored for the programming community.',
                 textAlign: TextAlign.center,
               ),
-              // You can add more content here as needed
+               SizedBox(height: 40), 
+                Text.rich(
+                  TextSpan(
+                    style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic), // Base style for all spans
+                    children: <TextSpan>[
+                      TextSpan(text: 'Developed By '),
+                      TextSpan(
+                        text: 'Seth Caster',
+                        style: TextStyle(fontWeight: FontWeight.bold), // Override to add bold
+                      ),
+                      TextSpan(text: ' for CMSC 2204'),
+                    ],
+                  ),
+                  textAlign: TextAlign.center,
+                )
+
             ],
           ),
         ),
