@@ -12,7 +12,7 @@ import 'package:finalapppart1/main.dart'; // Ensure correct import
 void main() {
   testWidgets('Login page test', (WidgetTester tester) async {
     // Build the LoginPage and trigger a frame.
-    await tester.pumpWidget(MaterialApp(home: LoginPage()));
+    await tester.pumpWidget(MaterialApp(home: MyApp()));
 
     // Verify that the Username and Password fields are present.
     expect(find.byType(TextField), findsNWidgets(2));

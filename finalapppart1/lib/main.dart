@@ -2,6 +2,26 @@ import 'package:flutter/material.dart';
 import 'about_page.dart';
 import 'storage_service.dart';
 
+// import 'package:flutter/material.dart';
+// import 'your_login_page_file.dart'; // Replace with actual file name
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'The Joker',
+      theme: ThemeData(
+      ),
+      home: LoginPage(), 
+    );
+  }
+}
+
+
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -15,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Login')),
+      appBar: AppBar(title: Text('The Joker')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
