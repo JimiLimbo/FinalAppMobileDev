@@ -2,18 +2,16 @@ import 'package:flutter/material.dart';
 import 'about_page.dart';
 import 'storage_service.dart';
 
-// import 'package:flutter/material.dart';
-// import 'your_login_page_file.dart'; // Replace with actual file name
-
 void main() {
   runApp(MyApp());
+  StorageService().saveCredentials('admin', 'paSSw0rd');
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'The Joker',
+      title: 'Jokester',
       theme: ThemeData(
       ),
       home: LoginPage(), 
@@ -35,11 +33,11 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('The Joker')),
+      appBar: AppBar(title: Text('Jokester')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             TextField(
               controller: _usernameController,
