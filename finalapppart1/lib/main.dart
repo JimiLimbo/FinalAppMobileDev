@@ -79,8 +79,8 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           Positioned(
-            left: 10,
-            bottom: 10,
+            left: 1,
+            bottom: 1,
             child: TextButton(
               onPressed: () {
                 Navigator.push(
@@ -95,8 +95,8 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           Positioned(
-            right: 10,
-            bottom: 10,
+            right: 18,
+            bottom: 18,
             child: Text('Version 1.0.1'),
           ),
         ],
