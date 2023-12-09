@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                   Text('Please sign in',
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-                  SizedBox(height: 20), // Provides some spacing
+                  SizedBox(height: 20), 
                   TextField(
                     controller: _usernameController,
                     decoration: InputDecoration(labelText: 'Username'),
@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                     decoration: InputDecoration(labelText: 'Password'),
                     obscureText: true,
                   ),
-                  SizedBox(height: 20), // More spacing
+                  SizedBox(height: 20), 
                   ElevatedButton(
                     onPressed: _login,
                     child: Text('Sign In'),
@@ -102,7 +102,6 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
   void _login() async {
     Map<String, String>? credentials = await _storageService.getCredentials();
 
@@ -112,7 +111,6 @@ class _LoginPageState extends State<LoginPage> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Login success')),
       );
-      // Navigate to another screen if needed
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Invalid username or password')),
