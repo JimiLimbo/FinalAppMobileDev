@@ -35,8 +35,9 @@ class _LoginPageState extends State<LoginPage> {
         title: Text(
           'Jokester',
           style: TextStyle(
-            fontSize: 55,
+            fontSize: 50,
             fontWeight: FontWeight.bold,
+            fontFamily: 'Jokerman',
           ),
         ),
         centerTitle: true,

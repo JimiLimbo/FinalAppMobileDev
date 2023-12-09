@@ -17,14 +17,41 @@ class AboutPage extends StatelessWidget {
             children: <Widget>[
               Text(
                 'About This App',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 44, fontWeight: FontWeight.bold, fontFamily: 'Jokerman',),
               ),
               SizedBox(height: 20),
-              Text(
-                'Welcome to Jokester, the ultimate destination for every programmer who appreciates a good laugh! In the world of coding, where complexities and challenges are a daily encounter, a dash of humor is not just refreshing but necessary. That is precisely what Jokester brings to your fingertips, an endless stream of jokes tailored for the programming community.',
+              RichText(
                 textAlign: TextAlign.center,
+                text: TextSpan(
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'Welcome to ',
+                      style: TextStyle(
+                        fontSize: 26, 
+                        color: Colors.black, 
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Jokester',
+                      style: TextStyle(
+                        fontFamily: 'Jokerman',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 26, 
+                        color: Colors.orange,
+                      ),
+                    ),
+                    TextSpan(
+                      text: ', the ultimate destination for every programmer who appreciates a good laugh! In the world of coding, where complexities and challenges are a daily encounter, a dash of humor is not just refreshing but necessary. That is precisely what Jokester brings to your fingertips, an endless stream of jokes tailored for the programming community.',
+                      style: TextStyle(
+                        fontSize: 26, 
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-               SizedBox(height: 475), 
+
+               SizedBox(height: 155), 
                 Text.rich(
                   TextSpan(
                     style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic), 
@@ -32,14 +59,13 @@ class AboutPage extends StatelessWidget {
                       TextSpan(text: 'Developed By '),
                       TextSpan(
                         text: 'Seth Caster',
-                        style: TextStyle(fontWeight: FontWeight.bold), 
+                        style: TextStyle(fontWeight: FontWeight.bold, color:Colors.orange), 
                       ),
                       TextSpan(text: ' for CMSC 2204'),
                     ],
                   ),
                   textAlign: TextAlign.center,
                 )
-
             ],
           ),
         ),
