@@ -40,7 +40,7 @@ class JokeDetailPage extends StatelessWidget {
             Center(
               child: Image.asset('assets/images/Jester.png', 
                 width: 300, 
-                height: 350, 
+                height: 300, 
                 fit: BoxFit.cover,
               ),
             ),

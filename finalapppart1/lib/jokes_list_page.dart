@@ -20,6 +20,7 @@ class _JokesListPageState extends State<JokesListPage> {
   }
 
   Future<void> fetchJokes() async {
+  try {
     final response = await http.get(Uri.parse('https://v2.jokeapi.dev/joke/Programming?type=twopart&amount=10'));
     if (response.statusCode == 200) {
       var jsonResponse = jsonDecode(response.body);
@@ -27,9 +28,24 @@ class _JokesListPageState extends State<JokesListPage> {
         jokes = List<Joke>.from(jsonResponse['jokes'].map((x) => Joke.fromJson(x)));
       });
     } else {
-      // Handle error
+      print('Failed to load jokes. Status code: ${response.statusCode}');
+      showErrorMessage(context, 'Failed to load jokes.');
     }
+  } catch (e) {
+    print('An error occurred: $e');
+    showErrorMessage(context, 'An error occurred while fetching jokes.');
   }
+}
+
+void showErrorMessage(BuildContext context, String message) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(message),
+      backgroundColor: Colors.red,
+    ),
+  );
+}
+
 
   @override
   Widget build(BuildContext context) {
