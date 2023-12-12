@@ -36,16 +36,22 @@ class JokeDetailPage extends StatelessWidget {
             ...joke.details.flags.entries.map((entry) => 
               Text('${entry.key}: ${entry.value}', style: TextStyle(fontSize: 18))
             ).toList(),
-            // Add other properties here
-            Spacer(),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context); // Return to previous screen (jokes list)
-              },
-              child: Text('Return to Jokes List'),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.orange,
-                onPrimary: Colors.white,
+            SizedBox(height: 20),
+            Center(
+              child: Image.asset('assets/images/Jester.png', 
+                width: 300, 
+                height: 350, 
+                fit: BoxFit.cover,
+              ),
+            ),
+             Spacer(),
+            Center(
+              child: ElevatedButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text('Return to Jokes List'),
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white, backgroundColor: Colors.orange,
+                ),
               ),
             ),
           ],

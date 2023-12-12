@@ -3,6 +3,7 @@ import 'joke.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'joke_detail_page.dart';
+import 'main.dart';
 
 class JokesListPage extends StatefulWidget {
   @override
@@ -36,6 +37,24 @@ class _JokesListPageState extends State<JokesListPage> {
       appBar: AppBar(
         title: Text('Programming Jokes'),
         backgroundColor: Colors.orange,
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => LoginPage()),
+              );
+            },
+            child: Row(
+              children: <Widget>[
+                Text('Log Out'),
+                Icon(Icons.logout),
+              ],
+            ),
+            style: TextButton.styleFrom(
+              foregroundColor: Colors.white,
+            ),
+          ),
+        ],
       ),
       body: Container(
         decoration: BoxDecoration(
