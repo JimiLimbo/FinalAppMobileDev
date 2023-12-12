@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'about_page.dart';
 import 'storage_service.dart';
+import 'jokes_list_page.dart'; 
+
 
 void main() {
   runApp(MyApp());
@@ -104,18 +106,22 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
   void _login() async {
-    Map<String, String>? credentials = await _storageService.getCredentials();
+  Map<String, String>? credentials = await _storageService.getCredentials();
 
-    if (credentials != null &&
-        _usernameController.text == credentials['username'] &&
-        _passwordController.text == credentials['password']) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Login success')),
-      );
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Invalid username or password')),
-      );
-    }
+  if (credentials != null &&
+      _usernameController.text == credentials['username'] &&
+      _passwordController.text == credentials['password']) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Login success')),
+    );
+    Navigator.of(context).pushReplacement( 
+      MaterialPageRoute(builder: (context) => JokesListPage()),
+    );
+  } else {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Invalid username or password')),
+    );
   }
+}
+
 }
