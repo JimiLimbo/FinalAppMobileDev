@@ -99,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
           Positioned(
             right: 18,
             bottom: 18,
-            child: Text('Version 1.0.1'),
+            child: Text('Version 1.0.2'),
           ),
         ],
       ),
