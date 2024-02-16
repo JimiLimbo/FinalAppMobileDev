@@ -5,9 +5,9 @@ import 'jokes_list_page.dart';
 
 
 void main() {
-  runApp(MyApp());
+  runApp(MyApp());                             // Zero
   StorageService().saveCredentials('admin', 'paSSw0rd');
-}
+}                               //UserName and Password
 
 class MyApp extends StatelessWidget {
   @override
