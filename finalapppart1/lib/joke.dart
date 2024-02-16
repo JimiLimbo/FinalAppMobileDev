@@ -2,7 +2,7 @@ class Joke {
   final String category;
   final String setup;
   final String delivery;
-  final JokeDetails details;  // Ensure this property is correctly defined
+  final JokeDetails details; // Ensure this property is correctly defined 
 
   Joke({required this.category, required this.setup, required this.delivery, required this.details});
 
